@@ -15,4 +15,19 @@
         color: #fff;
         font-family: 'nunito_sansbold';  
     }
+
+    .spinner {
+        border: 8px solid rgba(255, 255, 255, 0.1);
+        border-left-color: #fff;
+        border-radius: 50%;
+        margin-top: 70px;
+        margin-left: 47.5%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
 }
