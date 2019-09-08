@@ -3,16 +3,21 @@ var count = 0,
     speed = 130;
 
 window.onload = function typeWriter() {
+  connectButton = document.getElementById("button-home");
+
   if (count < txt.length) {
     document.getElementById("title-presentation").innerHTML += txt.charAt(count);
     count++;
     setTimeout(typeWriter, speed);
   } else {
-        document.getElementById("button-home").classList.remove("hide-button-effect");
-        document.getElementById("button-home").classList.add("button-effect");
+        connectButton.classList.remove("hide-button-effect");
+        connectButton.classList.add("button-effect");
   }
-
-  document.getElementById("button-home").onclick = function loading() {
-    document.getElementById("loading").classList.remove("hide");
+  
+  spinnerLoading = document.getElementById("loading");
+  connectButton.onclick = function loading() {
+    connectButton.classList.add("hide");
+    spinnerLoading.classList.remove("hide-button-effect");
+    spinnerLoading.classList.add("button-effect");
   }
 }
