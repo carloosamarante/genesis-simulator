@@ -6,7 +6,7 @@
             font-size: 60px;
             margin-top: 32px;
             margin-left: 12%;
-            color: #8A05BD;
+            color: $primary-color;
             margin-bottom: 90px;
         }
         
@@ -36,7 +36,8 @@
                 text-align: center;
                 color: #fff;
                 padding: 25px 0px;
-                background-color: #8A05BD;
+                font-size: $modules-font-size;
+                background-color: $primary-color;
                 margin: 5% 20%;
                 border-radius: 50px;
                 box-shadow: 0 3px 6px rgba(0,0,0,.16);
