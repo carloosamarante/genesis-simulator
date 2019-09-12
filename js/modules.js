@@ -22,4 +22,11 @@ window.onload = function typeWriter() {
     timeModal.classList.remove("hide-button-effect");
     timeModal.classList.add("button-effect");
   }
+
+  window.onclick = function(event) {
+    if (event.target == timeModal) {
+      timeModal.classList.remove("button-effect");
+      timeModal.classList.add("hide-button-effect");
+    }
+  }
 }
