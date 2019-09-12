@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass site/scss/app.scss app.css"
+    "scss": "node-sass site/scss/app.scss app.css",
+    "site": "webpack js/app.js -o site.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
   }
 }
