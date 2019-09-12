@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass site/scss/app.scss app.css",
-    "site": "webpack js/app.js -o site.js"
+    "js": "webpack js/app.js -o site.js"
   },
   "author": "",
   "license": "ISC",
