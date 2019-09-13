@@ -4,6 +4,8 @@ window.onload = function typeWriter() {
       plusIcon = document.getElementById("plus-icon"),
       timeModule = document.getElementById("time-module"),
       timeModal = document.getElementById("time-modal");
+      timePeriodButton = document.getElementById("period-time-button");
+      timeClockButton = document.getElementById("time-clock-button");
 
   moduleIcon.classList.remove("hide-button-effect");
   moduleIcon.classList.add("button-effect");
@@ -27,6 +29,24 @@ window.onload = function typeWriter() {
     if (event.target == timeModal) {
       timeModal.classList.remove("button-effect");
       timeModal.classList.add("hide-button-effect");
+    }
+  }
+
+  timeClockButton.onclick = function(){
+    changePeriod('clock');
+  };
+
+  timePeriodButton.onclick = function(){
+    changePeriod('period');
+  };
+
+  function changePeriod(typeButton) {
+    if (typeButton == 'clock') {
+      timec = document.getElementById("timec").value;
+      document.getElementById("hour-clock").innerHTML = timec
+    } else {
+      timep = document.getElementById("timep").value;
+      document.getElementById("hour-period").innerHTML = timep
     }
   }
 }
