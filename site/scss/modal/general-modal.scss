@@ -1,0 +1,35 @@
+.modal {
+    font-family: $standard-font-normal;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+    
+    .modal-content {
+        margin: auto;
+        position: relative;
+        padding: 0;
+        outline: 0;
+        width: 60%;
+        margin-top: 160px;
+    }
+    .modal-container {
+        width: 100%;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+    
+    .modal-box {
+        box-sizing: border-box;
+        width: 50%;
+        background-color: $white;
+        float: left;
+        text-align: center;
+    }
+}
