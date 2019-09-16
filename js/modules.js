@@ -1,12 +1,10 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
   if (window.location.pathname.match('modules.html') != null) {
     var moduleIcon = document.getElementById("module-icon"),
       moduleBox = document.getElementsByClassName("modules-box"),
       plusIcon = document.getElementById("plus-icon"),
-      timeModule = document.getElementById("time-module"),
-      timeModal = document.getElementById("time-modal");
-      timePeriodButton = document.getElementById("period-time-button");
-      timeClockButton = document.getElementById("time-clock-button");
+      velocityModule = document.getElementById("velocity-module");
+    velocityModal = document.getElementById("velocity-modal");
 
     moduleIcon.classList.remove("hide-button-effect");
     moduleIcon.classList.add("button-effect");
@@ -16,39 +14,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     function showModules() {
       for (var i = 0; i < moduleBox.length; ++i) {
-          moduleBox[i].classList.remove("hide-button-effect");
-          moduleBox[i].classList.add("button-effect");
+        moduleBox[i].classList.remove("hide-button-effect");
+        moduleBox[i].classList.add("button-effect");
       }
     }
 
-    timeModule.onclick = function showTime() {
-      timeModal.classList.remove("hide-button-effect");
-      timeModal.classList.add("button-effect");
-    }
-
-    window.onclick = function(event) {
-      if (event.target == timeModal) {
-        timeModal.classList.remove("button-effect");
-        timeModal.classList.add("hide-button-effect");
-      }
-    }
-
-    timeClockButton.onclick = function(){
-      changePeriod('clock');
-    };
-
-    timePeriodButton.onclick = function(){
-      changePeriod('period');
-    };
-
-    function changePeriod(typeButton) {
-      if (typeButton == 'clock') {
-        timec = document.getElementById("timec").value;
-        document.getElementById("hour-clock").innerHTML = timec
-      } else {
-        timep = document.getElementById("timep").value;
-        document.getElementById("hour-period").innerHTML = timep
-      }
-    }
+    // velocityModule.onclick = function showTime() {
+    //   velocityModal.classList.remove("hide-button-effect");
+    //   velocityModal.classList.add("button-effect");
+    // }
+    // if (event.target == velocityModal) {
+    //   velocityModal.classList.remove("button-effect");
+    //   velocityModal.classList.add("hide-button-effect");
+    // }
   }
 })
