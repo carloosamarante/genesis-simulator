@@ -1,67 +1,75 @@
 <html>
-    <head>
-        <title>Genesis Simulator</title>
-        <link rel="stylesheet" href="../app.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body id="modules">
-        <div class="modules-container">
-            <div class="modules-title">
-                <span id="module-title">Módulos</span>
-                <img id="module-icon" class="module-icon hide-button-effect" src="../static/module.svg"/>
-                <img id="plus-icon" class="plus-icon hide-button-effect" src="../static/plus.svg"/>
-            </div>
 
-            <div class="modules-row">
-                <div class="modules-box hide-button-effect">
-                    <p id="time-module" class="title-box">Tempo/Horário</p>
-                </div>
-                <div class="modules-box hide-button-effect">
-                    <p class="title-box">Lorem ipsum</p>
-                </div>
-            </div>
+<head>
+    <title>Genesis Simulator</title>
+    <link rel="stylesheet" href="../app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-            <div class="modules-row">
-                <div class="modules-box hide-button-effect">
-                    <p class="title-box">Lorem ipsum</p>
-                </div>
-                <div class="modules-box hide-button-effect">
-                    <p class="title-box">Lorem ipsum</p>
-                </div>
-            </div>
+<body id="modules">
+    <div class="modules-container">
+        <div class="modules-title">
+            <span id="module-title">Módulos</span>
+            <img id="module-icon" class="module-icon hide-button-effect" src="../static/module.svg" />
+            <img id="plus-icon" class="plus-icon hide-button-effect" src="../static/plus.svg" />
+        </div>
 
-            <div class="modules-row">
-                <div class="modules-box hide-button-effect">
-                    <p class="title-box">Lorem ipsum</p>
-                </div>
-                <div class="modules-box hide-button-effect">
-                    <p class="title-box">Lorem ipsum</p>
-                </div>
+        <div class="modules-row">
+            <div class="modules-box hide-button-effect">
+                <p id="time-module" class="title-box">Tempo/Horário</p>
+            </div>
+            <div class="modules-box hide-button-effect">
+                <p id="velocity-module" class="title-box">Velocidade</p>
             </div>
         </div>
 
-        <div id="time-modal" class="modal hide-button-effect">
-            <div class="modal-content">
-                <div class="modal-container">
-                    <div class="modal-box">
-                        <p class="modal-title">Horário</p>
-                        <div class="clock">
-                            <p id="hour-clock">88:88</p>
-                        </div>
-                        <input type="text" id="timec" placeholder="Ex: 12:00">
-                        <a href="#" id="time-clock-button" class="clock-button">Alterar</a>
+        <div class="modules-row">
+            <div class="modules-box hide-button-effect">
+                <p class="title-box">Lorem ipsum</p>
+            </div>
+            <div class="modules-box hide-button-effect">
+                <p class="title-box">Lorem ipsum</p>
+            </div>
+        </div>
+
+        <div class="modules-row">
+            <div class="modules-box hide-button-effect">
+                <p class="title-box">Lorem ipsum</p>
+            </div>
+            <div class="modules-box hide-button-effect">
+                <p class="title-box">Lorem ipsum</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="time-modal" class="modal hide-button-effect">
+        <div class="modal-content">
+            <div class="modal-container">
+                <div class="modal-box">
+                    <p class="modal-title">Horário</p>
+                    <div class="clock">
+                        <p id="hour-clock">88:88</p>
                     </div>
-                    <div class="modal-box">
-                        <p class="modal-title">Tempo Ligado</p>
-                        <div class="clock">
-                            <p id="hour-period">88:88</p>
-                        </div>
-                        <input type="text" id="timep" placeholder="Ex: 12:00">
-                        <a href="#" id="period-time-button" class="clock-button">Alterar</a>
+                    <input type="text" id="timec" placeholder="Ex: 12:00">
+                    <a href="#" id="time-clock-button" class="clock-button">Alterar</a>
+                </div>
+                <div class="modal-box">
+                    <p class="modal-title">Tempo Ligado</p>
+                    <div class="clock">
+                        <p id="hour-period">88:88</p>
                     </div>
+                    <input type="text" id="timep" placeholder="Ex: 12:00">
+                    <a href="#" id="period-time-button" class="clock-button">Alterar</a>
                 </div>
             </div>
         </div>
-    </body>
-    <script src="../site.js"></script>
+    </div>
+
+    <div id="velocity-modal" class="modal hide-button-effect">
+        <div class="modal-content">
+        </div>
+    </div>
+</body>
+<script src="../site.js"></script>
+
 </html>

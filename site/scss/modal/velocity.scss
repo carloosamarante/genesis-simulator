@@ -1,0 +1,45 @@
+:root {
+ --rotation: 0deg;
+}
+
+.container {
+  font-family: Arial;
+  height: 8rem;
+  left: 50%;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+.loader {
+  background: transparent;
+  border: 30px solid #D7ECA6;
+  border-radius: 50%;
+  height: 16rem;
+  transition: transform .2s ease;
+  transform: rotate(var(--rotation));
+  position: relative;
+  width: 16rem;
+  &::before {
+    content: '';
+    border: 30px solid #8CC800;
+    border-left-color: transparent;
+    border-radius: 50%;
+    border-top-color: transparent;
+    height: 16rem;
+    left: -30px;
+    position: absolute;
+    top: -30px;
+    transform: rotate(45deg);
+    width: 16rem;
+    z-index: 2;
+  }
+  &__title {
+    color: #8CC800;
+    font-size: 5rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
