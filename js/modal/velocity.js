@@ -37,10 +37,12 @@ document.addEventListener("DOMContentLoaded", function (eventVelocity) {
     }
 
     function calcSpeedMarker(speed) {
+      [].forEach.call(document.querySelectorAll('.marker-opacity'), function (el) {
+        el.classList.remove('marker-opacity');
+      });
       marker = Math.round(speed/20);
       for (var i = 1; i <= marker; i++) {
         id = "marker-" + i
-        console.log(id)
         document.getElementById(id).classList.add("marker-opacity");
      }
     }
