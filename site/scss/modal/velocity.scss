@@ -29,6 +29,11 @@
     cursor: pointer;
   }
 
+  .disabled {
+    background-color: $gray;
+    color: $dark-gray;
+  }
+
   .speedometer {
       font-family: 'Sarpanch', sans-serif;
       width: 400px;
@@ -49,7 +54,7 @@
       position: relative;
       left: 2em;
 
-      .velocity {
+      #velocity {
         font-size: 1em;
       }
       
@@ -104,5 +109,9 @@
           $d : 0-($i * $totalMarkers);
           transform: rotate(#{$d}deg);            
       }
+  }
+
+  .marker-opacity {
+    opacity: 1;
   }
 }
