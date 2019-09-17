@@ -5,7 +5,7 @@
 
   #velocity-container {
     position: absolute;
-    background: black;
+    background: white;
     height: 500px;
   }
 
@@ -46,9 +46,9 @@
 
   .speed  {
       text-align: center;
-      color:$velocity-color;
+      color:$primary-color;
       font-size: 5em;
-      text-shadow: $velocity-color 0 0 $speedMarkerWidth*2;
+      text-shadow: $primary-color 0 0 $speedMarkerWidth*2;
       transform: rotate(90deg);
       transform-origin: 0 0;
       position: relative;
@@ -100,8 +100,8 @@
 
   [class^="speed-marker-"]:after,
   [class^="speed-marker-"]:before {
-      background: $velocity-color;
-      box-shadow: 0 0 $speedMarkerWidth $speedMarkerWidth/2 $velocity-color;    
+      background: $primary-color;
+      box-shadow: 0 0 $speedMarkerWidth $speedMarkerWidth/2 $primary-color;    
   }
 
   @for $i from 1 through $totalMarkers {
