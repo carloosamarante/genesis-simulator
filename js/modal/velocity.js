@@ -1,15 +1,11 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function (eventVelocity) {
   if (window.location.pathname.match('modules.html') != null) {
     var velocityModule = document.getElementById("velocity-module"),
-        velocityModal = document.getElementById("velocity-modal");
+      velocityModal = document.getElementById("velocity-modal");
 
-    velocityModule.onclick = function showTime() {
+    velocityModule.onclick = function () {
       velocityModal.classList.remove("hide-button-effect");
       velocityModal.classList.add("button-effect");
-    }
-    if (event.target == velocityModal) {
-      velocityModal.classList.remove("button-effect");
-      velocityModal.classList.add("hide-button-effect");
     }
   }
 })

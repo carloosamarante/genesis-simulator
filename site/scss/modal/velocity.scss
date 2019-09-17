@@ -1,45 +1,108 @@
-:root {
- --rotation: 0deg;
-}
-
-.container {
-  font-family: Arial;
-  height: 8rem;
-  left: 50%;
-  overflow: hidden;
-  position: relative;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-}
-.loader {
-  background: transparent;
-  border: 30px solid #D7ECA6;
-  border-radius: 50%;
-  height: 16rem;
-  transition: transform .2s ease;
-  transform: rotate(var(--rotation));
-  position: relative;
-  width: 16rem;
-  &::before {
-    content: '';
-    border: 30px solid #8CC800;
-    border-left-color: transparent;
-    border-radius: 50%;
-    border-top-color: transparent;
-    height: 16rem;
-    left: -30px;
-    position: absolute;
-    top: -30px;
-    transform: rotate(45deg);
-    width: 16rem;
-    z-index: 2;
+#velocity-modal {
+  .modal-content {
+    margin-top: 100px;
   }
-  &__title {
-    color: #8CC800;
-    font-size: 5rem;
-    left: 50%;
+
+  #velocity-container {
     position: absolute;
-    transform: translateX(-50%);
+    background: black;
+    height: 500px;
+  }
+
+  .change-velocity {
+    text-align: center;
+    margin-top: 180px;
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .velocity-button {
+    background-color: $primary-color;
+    color: $white;
+    padding: 15px 0;
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 16px 2px;
+    cursor: pointer;
+  }
+
+  .speedometer {
+      font-family: 'Sarpanch', sans-serif;
+      width: 400px;
+      height: $speedometerSize;
+      display: block;
+      margin: -170px auto;
+      position: relative;
+      transform: rotate(-90deg);
+  }
+
+  .speed  {
+      text-align: center;
+      color:$velocity-color;
+      font-size: 5em;
+      text-shadow: $velocity-color 0 0 $speedMarkerWidth*2;
+      transform: rotate(90deg);
+      transform-origin: 0 0;
+      position: relative;
+      left: 2em;
+
+      .velocity {
+        font-size: 1em;
+      }
+      
+      span {
+          font-size: 0.3em;
+          display: block;
+      }
+  }
+
+  [class^="speed-marker-"] {
+      height: $speedometerSize/2;
+      opacity: .4;
+  }
+
+  [class^="speed-marker-"], 
+  [class^="speed-marker-"]:after {
+      width: $speedMarkerWidth;
+  }
+
+  [class^="speed-marker-"], 
+  [class^="speed-marker-"]:after,
+  [class^="speed-marker-"]:before {
+      display: block;
+      position: absolute;
+      top: $speedometerSize/2;
+      left: 0;
+      margin-left: floor($speedMarkerWidth/2) * -1;
+      transform-origin: top center;
+  }
+
+  [class^="speed-marker-"]:after {
+      content: ' ';
+      height: $speedMarkerHeight;
+  }
+
+  [class^="speed-marker-"]:not(:first-child):before {
+      content: ' ';    
+      height: $speedMarkerHeight + 3;
+      width: floor($speedMarkerWidth / 1.5);
+      margin-left: -1 * $speedMarkerWidth * 5;    
+  }
+
+
+  [class^="speed-marker-"]:after,
+  [class^="speed-marker-"]:before {
+      background: $velocity-color;
+      box-shadow: 0 0 $speedMarkerWidth $speedMarkerWidth/2 $velocity-color;    
+  }
+
+  @for $i from 1 through $totalMarkers {
+      .speed-marker-#{$i} {
+          $d : 0-($i * $totalMarkers);
+          transform: rotate(#{$d}deg);            
+      }
   }
 }
