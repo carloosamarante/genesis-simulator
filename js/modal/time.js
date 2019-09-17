@@ -33,14 +33,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
           TimeClockHttp.open('POST', url);
           TimeClockHttp.onreadystatechange = function () {
-            if (TimeClockHttp.readyState == 3) {
+            if (TimeClockHttp.readyState != 4) {
               timeClockButton.innerHTML = "Alterando...";
-              timeClockButton.setAttribute("disabled", true);
+              timeClockButton.classList.add("disabled");
             }
             if (TimeClockHttp.readyState == 4 && TimeClockHttp.status == 200) {
-              document.getElementById("hour-clock").innerHTML = timec;
-              timeClockButton.innerHTML = "Alterar";
-              timeClockButton.setAttribute("disabled", false);
+              setTimeout(function() {
+                document.getElementById("hour-clock").innerHTML = timec;
+                timeClockButton.innerHTML = "Alterar";
+                timeClockButton.classList.remove("disabled");
+              }, 3000);
             }
           }
           TimeClockHttp.send(timec);
@@ -50,14 +52,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
           TimePeriodHttp.open('POST', url);
           TimePeriodHttp.onreadystatechange = function () {
-            if (TimePeriodHttp.readyState == 3) {
+            if (TimePeriodHttp.readyState != 4) {
               timePeriodButton.innerHTML = "Alterando...";
-              timePeriodButton.setAttribute("disabled", true);
+              timePeriodButton.classList.add("disabled");
             }
             if (TimePeriodHttp.readyState == 4 && TimePeriodHttp.status == 200) {
-              document.getElementById("hour-period").innerHTML = timep;
-              timePeriodButton.innerHTML = "Alterar";
-              timePeriodButton.setAttribute("disabled", false);
+              setTimeout(function() {
+                document.getElementById("hour-period").innerHTML = timep;
+                timePeriodButton.innerHTML = "Alterar";
+                timePeriodButton.classList.remove("disabled"); 
+              }, 3000);
             }
           }
           TimePeriodHttp.send(timep);

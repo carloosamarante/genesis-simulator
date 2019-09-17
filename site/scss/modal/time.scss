@@ -33,4 +33,9 @@
         margin: 16px 2px;
         cursor: pointer;
     }
+
+    .disabled {
+        background-color: $gray;
+        color: $dark-gray;
+      }
 }
