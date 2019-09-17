@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (eventVelocity) {
       [].forEach.call(document.querySelectorAll('.marker-opacity'), function (el) {
         el.classList.remove('marker-opacity');
       });
-      marker = Math.round(speed/20);
+      marker = Math.round(speed/15);
       for (var i = 1; i <= marker; i++) {
         id = "marker-" + i
         document.getElementById(id).classList.add("marker-opacity");
