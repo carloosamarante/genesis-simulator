@@ -28,7 +28,7 @@
                 <p class="title-box">Speech</p>
             </div>
             <div class="modules-box hide-button-effect">
-                <p class="title-box">Modo Sono</p>
+                <p id="sleep-module" class="title-box">Modo Sono</p>
             </div>
         </div>
 
@@ -88,6 +88,22 @@
                     <input type="text" id="odometer" placeholder="Ex: 20">
                     <a href="#" id="odometer-button" class="velocity-button">Alterar</a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sleep-modal" class="modal hide-button-effect">
+        <div class="modal-content">
+            <div id="sleep-container" class="modal-container">
+                <p class="modal-title">Modo Sono</p>
+                <div id="onoffswitch-container" class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>
+                <div id="spinner-sleep" class="hide-button-effect"></div>
             </div>
         </div>
     </div>
