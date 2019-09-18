@@ -5,9 +5,9 @@ if (window.location.pathname.match('modules.html') != null) {
     velocityHttp = new XMLHttpRequest(),
     url = 'http://localhost:5051/healthcheck';
 
-    velocityButton.onclick = function () {
-      changeSpeed();
-    };
+  velocityButton.onclick = function () {
+    changeSpeed();
+  };
 
   velocityModule.onclick = function () {
     velocityModal.classList.remove("hide-button-effect");
@@ -39,7 +39,7 @@ if (window.location.pathname.match('modules.html') != null) {
     [].forEach.call(document.querySelectorAll('.marker-opacity'), function (el) {
       el.classList.remove('marker-opacity');
     });
-    marker = Math.round(speed/15);
+    marker = Math.round(speed / 15);
     for (var i = 1; i <= marker; i++) {
       id = "marker-" + i
       document.getElementById(id).classList.add("marker-opacity");
