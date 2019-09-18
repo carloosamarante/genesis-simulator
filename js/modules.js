@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       moduleBox = document.getElementsByClassName("modules-box"),
       plusIcon = document.getElementById("plus-icon"),
       velocityModal = document.getElementById("velocity-modal"),
+      sleepModal = document.getElementById("sleep-modal"),
       timeModal = document.getElementById("time-modal");
 
     moduleIcon.classList.remove("hide-button-effect");
@@ -20,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       if (event.target == velocityModal) {
         velocityModal.classList.remove("button-effect");
         velocityModal.classList.add("hide-button-effect");
+      }
+      if (event.target == sleepModal) {
+        sleepModal.classList.remove("button-effect");
+        sleepModal.classList.add("hide-button-effect");
       }
     }
 
