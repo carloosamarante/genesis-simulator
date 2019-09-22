@@ -16,7 +16,6 @@ if (window.location.pathname.match('modules.html') != null) {
     changeStatus();
   };
 
-
   function changeStatus() {
     sleepModalHttp.open('POST', url);
     sleepModalHttp.onreadystatechange = function () {
