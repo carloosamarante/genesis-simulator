@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       plusIcon = document.getElementById("plus-icon"),
       velocityModal = document.getElementById("velocity-modal"),
       sleepModal = document.getElementById("sleep-modal"),
-      timeModal = document.getElementById("time-modal");
+      timeModal = document.getElementById("time-modal"),
+      speechModal = document.getElementById("speech-modal");
 
     moduleIcon.classList.remove("hide-button-effect");
     moduleIcon.classList.add("button-effect");
@@ -25,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       if (event.target == sleepModal) {
         sleepModal.classList.remove("button-effect");
         sleepModal.classList.add("hide-button-effect");
+      }
+      if (event.target == speechModal) {
+        speechModal.classList.remove("button-effect");
+        speechModal.classList.add("hide-button-effect");
       }
     }
 
