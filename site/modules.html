@@ -25,7 +25,7 @@
 
         <div class="modules-row">
             <div class="modules-box hide-button-effect">
-                <p class="title-box">Speech</p>
+                <p id="speech-module" class="title-box">Comando de Voz</p>
             </div>
             <div class="modules-box hide-button-effect">
                 <p id="sleep-module" class="title-box">Modo Sono</p>
@@ -106,6 +106,18 @@
                 <div id="spinner-sleep" class="hide-button-effect"></div>
             </div>
         </div>
+    </div>
+
+    <div id="speech-modal" class="modal hide-button-effect">
+        <div class="modal-content">
+            <div id="speech-container" class="modal-container">
+                <p class="modal-title">Comando de Voz</p>
+                <button id="microphone-button" class="speech-button">
+                    <img id="module-icon" class="module-icon" src="../static/microphone.svg"/>
+                </button>
+                <div id="spinner-speech" class="hide-button-effect"></div>
+            </div>
+        </div>    
     </div>
 </body>
 <script src="../site.js"></script>
