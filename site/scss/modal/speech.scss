@@ -1,0 +1,28 @@
+#speech-container {
+    background-color: $white;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .speech-button {
+        background-color: $primary-color;
+        border: none;
+        border-radius: 50px;
+        width: 80px;
+        height: 80px;
+        outline: none;
+        cursor: pointer;
+        margin-top: 16px;
+    }
+
+    #spinner-speech {
+        border: 8px solid rgba(138, 5, 189, 0.4);
+        border-left-color: $primary-color;
+        border-radius: 50%;
+        margin-left: 46%;
+        margin-top: -70px;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+}
