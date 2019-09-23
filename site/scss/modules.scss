@@ -15,12 +15,27 @@
             vertical-align: text-bottom;
         }
 
-        .plus-icon {
+        .new-module {
+            background: $primary-color;
+            color: $white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 16px;
             float: right;
-            margin-right: 12%;
-            width: 50px;
-            margin-top: 15px;
-            vertical-align: text-bottom;
+            display: inline-flex;
+            padding: 20px;
+            margin-right: 140px;
+            margin-top: 5px;
+            
+            span {
+                margin-top: 3px;
+                margin-right: 10px;
+            }
+
+            .plus-icon {
+                width: 27px;
+                margin-top: -3px;
+            }
         }
 
         .modules-row {
