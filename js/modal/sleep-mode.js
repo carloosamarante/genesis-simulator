@@ -30,7 +30,7 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    sleepModalHttp.send(sleepButton.checked);
+    sleepModalHttp.send('sleep: ' + sleepButton.checked);
   }
 
 }
