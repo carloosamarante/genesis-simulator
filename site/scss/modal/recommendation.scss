@@ -1,0 +1,23 @@
+#recommendation-modal {
+    .modal-box {
+        width: 33.3%;
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+
+    .recommendation-button {
+        background: $primary-color;
+        color: $white;
+        text-decoration: none;
+        padding: 25px 45px;
+        border-radius: 35px;
+    }
+
+    .modal-button {
+        margin-top: 100px;
+    }
+
+    .disabled {
+        background: $gray;
+    }
+}
