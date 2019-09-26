@@ -30,7 +30,7 @@ if (window.location.pathname.match('modules.html') != null) {
     recognition.stop();
   };
 
-  recognition.onerror = function(event) {
+  recognition.onerror = function (event) {
     spinnerSpeech.classList.add("hide-button-effect");
     speechButton.classList.remove("hide-button-effect");
   }

@@ -6,3 +6,4 @@ import './modal/sleep-mode';
 import './modal/speech';
 import './modal/security';
 import './modal/recommendation';
+import './modal/additional-modal';

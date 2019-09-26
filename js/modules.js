@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   if (window.location.pathname.match('modules.html') != null) {
     var moduleIcon = document.getElementById("module-icon"),
       moduleBox = document.getElementsByClassName("modules-box"),
+      newModule = document.getElementById("new-module-id"),
       plusIcon = document.getElementById("plus-icon"),
       velocityModal = document.getElementById("velocity-modal"),
       sleepModal = document.getElementById("sleep-modal"),
       timeModal = document.getElementById("time-modal"),
       speechModal = document.getElementById("speech-modal"),
       securityModal = document.getElementById("security-modal"),
-      recommendationModal = document.getElementById("recommendation-modal");
+      recommendationModal = document.getElementById("recommendation-modal"),
+      newModal = document.getElementById("new-modal");
 
     moduleIcon.classList.remove("hide-button-effect");
     moduleIcon.classList.add("button-effect");
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     plusIcon.classList.add("button-effect");
     showModules();
 
-    window.onclick = function (event) {
+    window.onclick = function(event) {
       if (event.target == timeModal) {
         timeModal.classList.remove("button-effect");
         timeModal.classList.add("hide-button-effect");
@@ -41,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         recommendationModal.classList.remove("button-effect");
         recommendationModal.classList.add("hide-button-effect");
       }
+      if (event.target == newModal) {
+        newModal.classList.remove("button-effect");
+        newModal.classList.add("hide-button-effect");
+      }
     }
 
     function showModules() {
@@ -48,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         moduleBox[i].classList.remove("hide-button-effect");
         moduleBox[i].classList.add("button-effect");
       }
+      newModule.classList.remove("hide-button-effect");
+      newModule.classList.add("button-effect");
     }
   }
 })
