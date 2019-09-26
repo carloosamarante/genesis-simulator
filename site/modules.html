@@ -11,7 +11,7 @@
         <div class="modules-title">
             <span id="module-title">Módulos</span>
             <img id="module-icon" class="module-icon hide-button-effect" src="../static/module.svg" />
-            <a href="#" class="new-module">
+            <a href="#" id="new-module-id" class="new-module hide-button-effect">
                 <span>Adicionar novo</span>
                 <img id="plus-icon" class="plus-icon button-effect" src="../static/plus.svg">
             </a>
@@ -39,7 +39,7 @@
             <div id="recommendation-module" class="modules-box hide-button-effect">
                 <p class="title-box">Recomendações</p>
             </div>
-            <div id="security-module" class="modules-box hide-button-effect">
+            <div id="security-module" class="hide-button-effect">
                 <p class="title-box">Segurança</p>
             </div>
         </div>
@@ -159,6 +159,18 @@
                     <div class="modal-button">
                         <a href="#" id="hotel-button" class="recommendation-button">Receber</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-modal" class="modal hide-button-effect">
+        <div class="modal-content">
+            <div id="additional-container" class="modal-container">
+                <p class="modal-title">Módulos Disponíveis</p>
+                <div class="available-modules">
+                    <p class="available-title">Modo Seguro</p>
+                    <img id="available-icon" src="../static/plus.svg">
                 </div>
             </div>
         </div>
