@@ -1,0 +1,29 @@
+#additional-container {
+    background: $white;
+    padding-top: 10px;
+    height: 300px;
+
+    .modal-title {
+        text-align: center;
+    }
+
+    .available-modules {
+        margin-top: 80px;
+        font-size: 20px;
+        margin-left: 50px;
+        background: $primary-color;
+        margin-right: 50px;
+        border-radius: 40px;
+        color: $white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+    }
+
+    #available-icon {
+        float: right;
+        margin-right: 60px;
+        height: 40px;
+        margin-top: -49px;
+    }
+}
