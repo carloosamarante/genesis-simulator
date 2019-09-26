@@ -1,4 +1,4 @@
-import './home';
+import './login';
 import './modules';
 import './modal/time';
 import './modal/velocity';
