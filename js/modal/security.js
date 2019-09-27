@@ -30,7 +30,7 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    securityModalHttp.send('security: ' + securityButton.checked);
+    securityModalHttp.send({'value': securityButton.checked});
   }
 
 }
