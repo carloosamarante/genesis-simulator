@@ -52,7 +52,7 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 2000);
       }
     }
-    speechModalHttp.send(command);
+    speechModalHttp.send({'value': command});
   }
 
 }
