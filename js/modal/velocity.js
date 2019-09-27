@@ -32,7 +32,7 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    velocityHttp.send(speed);
+    velocityHttp.send({'value': parseInt(speed)});
   }
 
   function calcSpeedMarker(speed) {
