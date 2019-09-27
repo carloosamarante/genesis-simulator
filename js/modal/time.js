@@ -38,7 +38,7 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      TimeClockHttp.send(timec);
+      TimeClockHttp.send({'value': timec});
 
     } else if (typeButton == 'period') {
       var timep = document.getElementById("timep").value;
@@ -57,7 +57,7 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      TimePeriodHttp.send(timep);
+      TimePeriodHttp.send({'value': timep});
     }
   }
 }
