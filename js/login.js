@@ -5,7 +5,7 @@ var count = 0,
 window.onload = function typeWriter() {
   if (window.location.pathname.match('login.html') != null) {
     connectHttp = new XMLHttpRequest(),
-      url = 'http://localhost:5051/healthcheck';
+      url = 'http://localhost:5051/connect';
     connectButton = document.getElementById("button-home");
     if (count < txt.length) {
       document.getElementById("title-presentation").innerHTML += txt.charAt(count);
@@ -18,7 +18,7 @@ window.onload = function typeWriter() {
 
     spinnerLoading = document.getElementById("loading");
     connectButton.onclick = function loading() {
-      connectHttp.open('POST', url);
+      connectHttp.open('GET', url);
       connectHttp.onreadystatechange = function () {
         if (connectHttp.readyState != 4) {
           connectButton.classList.add("hide");

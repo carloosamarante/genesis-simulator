@@ -3,7 +3,7 @@ if (window.location.pathname.match('modules.html') != null) {
     velocityModal = document.getElementById("velocity-modal"),
     velocityButton = document.getElementById("odometer-button"),
     velocityHttp = new XMLHttpRequest(),
-    url = 'http://localhost:5051/healthcheck';
+    url = 'http://localhost:5051/velocity';
 
   velocityButton.onclick = function () {
     changeSpeed();
@@ -17,7 +17,7 @@ if (window.location.pathname.match('modules.html') != null) {
   function changeSpeed() {
     var speed = document.getElementById("odometer").value;
 
-    velocityHttp.open('POST', url);
+    velocityHttp.open('PUT', url);
     velocityHttp.onreadystatechange = function () {
       if (velocityHttp.readyState != 4) {
         velocityButton.innerHTML = "Alterando...";
@@ -32,7 +32,9 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    velocityHttp.send({'value': parseInt(speed)});
+    velocityHttp.setRequestHeader("Content-type", "application/json");
+    var json = JSON.stringify({'value': parseInt(speed)});
+    velocityHttp.send(json);
   }
 
   function calcSpeedMarker(speed) {

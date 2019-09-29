@@ -5,7 +5,7 @@ if (window.location.pathname.match('modules.html') != null) {
     securityBoxContent = document.getElementById("onoffswitchsecurity-container"),
     securitySpinnerLoading = document.getElementById("spinner-security"),
     securityModalHttp = new XMLHttpRequest(),
-    url = 'http://localhost:5051/healthcheck';
+    url = 'http://localhost:5051/security';
 
   securityModule.onclick = function () {
     securityModal.classList.remove("hide-button-effect");
@@ -17,7 +17,7 @@ if (window.location.pathname.match('modules.html') != null) {
   };
 
   function changeStatus() {
-    securityModalHttp.open('POST', url);
+    securityModalHttp.open('PUT', url);
     securityModalHttp.onreadystatechange = function () {
       if (securityModalHttp.readyState != 4) {
         securityBoxContent.classList.add("hide-button-effect");

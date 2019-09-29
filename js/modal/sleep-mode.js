@@ -5,7 +5,7 @@ if (window.location.pathname.match('modules.html') != null) {
     sleepBoxContent = document.getElementById("onoffswitch-container"),
     spinnerLoading = document.getElementById("spinner-sleep"),
     sleepModalHttp = new XMLHttpRequest(),
-    url = 'http://localhost:5051/healthcheck';
+    url = 'http://localhost:5051/sleep';
 
   sleepModule.onclick = function () {
     sleepModal.classList.remove("hide-button-effect");
@@ -17,7 +17,7 @@ if (window.location.pathname.match('modules.html') != null) {
   };
 
   function changeStatus() {
-    sleepModalHttp.open('POST', url);
+    sleepModalHttp.open('PUT', url);
     sleepModalHttp.onreadystatechange = function () {
       if (sleepModalHttp.readyState != 4) {
         sleepBoxContent.classList.add("hide-button-effect");

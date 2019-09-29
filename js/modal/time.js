@@ -5,7 +5,8 @@ if (window.location.pathname.match('modules.html') != null) {
     timeClockButton = document.getElementById("time-clock-button"),
     TimeClockHttp = new XMLHttpRequest(),
     TimePeriodHttp = new XMLHttpRequest(),
-    url = 'http://localhost:5051/healthcheck';
+    urlTimePeriod = 'http://localhost:5051/time-on',
+    urlTimeClock = 'http://localhost:5051/time';
 
   timeModule.onclick = function showTime() {
     timeModal.classList.remove("hide-button-effect");
@@ -24,7 +25,7 @@ if (window.location.pathname.match('modules.html') != null) {
     if (typeButton == 'clock') {
       var timec = document.getElementById("timec").value;
 
-      TimeClockHttp.open('POST', url);
+      TimeClockHttp.open('PUT', urlTimeClock);
       TimeClockHttp.onreadystatechange = function () {
         if (TimeClockHttp.readyState != 4) {
           timeClockButton.innerHTML = "Alterando...";
@@ -38,12 +39,14 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      TimeClockHttp.send({'value': timec});
+      TimeClockHttp.setRequestHeader("Content-type", "application/json");
+      var json = JSON.stringify({'value': timec});
+      TimeClockHttp.send(json);
 
     } else if (typeButton == 'period') {
       var timep = document.getElementById("timep").value;
 
-      TimePeriodHttp.open('POST', url);
+      TimePeriodHttp.open('PUT', urlTimePeriod);
       TimePeriodHttp.onreadystatechange = function () {
         if (TimePeriodHttp.readyState != 4) {
           timePeriodButton.innerHTML = "Alterando...";
@@ -57,7 +60,9 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      TimePeriodHttp.send({'value': timep});
+      TimePeriodHttp.setRequestHeader("Content-type", "application/json");
+      var json = JSON.stringify({'value': timep});
+      TimePeriodHttp.send(json);
     }
   }
 }
