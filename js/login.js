@@ -32,6 +32,7 @@ window.onload = function typeWriter() {
           }, 3000);
         }
       }
+      connectHttp.setRequestHeader("Content-type", "application/json");
       connectHttp.send('conectando');
     }
   }

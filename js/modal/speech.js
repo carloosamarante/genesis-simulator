@@ -52,7 +52,8 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 2000);
       }
     }
-    speechModalHttp.send({'value': command});
+    speechModalHttp.setRequestHeader("Content-type", "application/json");
+    speechModalHttp.send(JSON.stringify({'value': command}));
   }
 
 }

@@ -48,7 +48,8 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    securityModalHttp.send({ 'value': securityButton.checked });
+    securityModalHttp.setRequestHeader("Content-type", "application/json");
+    securityModalHttp.send(JSON.stringify({ 'value': securityButton.checked }));
   }
 
   function changeAlertStatus(state) {
@@ -62,7 +63,8 @@ if (window.location.pathname.match('modules.html') != null) {
         }
       }
     }
-    securityAlertHttp.send({'value': state})
+    securityAlertHttp.setRequestHeader("Content-type", "application/json");
+    securityAlertHttp.send(JSON.stringify({'value': state}));
   }
 
 }

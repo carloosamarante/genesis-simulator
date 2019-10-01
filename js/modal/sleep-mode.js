@@ -30,7 +30,8 @@ if (window.location.pathname.match('modules.html') != null) {
         }, 3000);
       }
     }
-    sleepModalHttp.send({'value': sleepButton.checked});
+    sleepModalHttp.setRequestHeader("Content-type", "application/json");
+    sleepModalHttp.send(JSON.stringify({'value': sleepButton.checked}));
   }
 
 }
