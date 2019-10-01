@@ -4,7 +4,9 @@ if (window.location.pathname.match('modules.html') != null) {
     securityButton = document.getElementById("securityonoffswitch"),
     securityBoxContent = document.getElementById("onoffswitchsecurity-container"),
     securitySpinnerLoading = document.getElementById("spinner-security"),
+    securityAlertButton = document.getElementById("security-button"),
     securityModalHttp = new XMLHttpRequest(),
+    securityAlertHttp = new XMLHttpRequest(),
     url = 'http://localhost:5051/security';
 
   securityModule.onclick = function () {
@@ -16,10 +18,19 @@ if (window.location.pathname.match('modules.html') != null) {
     changeStatus();
   };
 
+  securityAlertButton.onclick = function () {
+    if (securityAlertButton.classList.contains("pulse")) {
+      changeAlertStatus(false);
+    } else {
+      changeAlertStatus(true);
+    }
+  }
+
   function changeStatus() {
     securityModalHttp.open('PUT', url);
     securityModalHttp.onreadystatechange = function () {
       if (securityModalHttp.readyState != 4) {
+        securityAlertButton.classList.add("hide-button-effect");
         securityBoxContent.classList.add("hide-button-effect");
         securitySpinnerLoading.classList.remove("hide-button-effect");
       }
@@ -27,10 +38,31 @@ if (window.location.pathname.match('modules.html') != null) {
         setTimeout(function () {
           securitySpinnerLoading.classList.add("hide-button-effect");
           securityBoxContent.classList.remove("hide-button-effect");
+
+          if (securityButton.checked) {
+            securityAlertButton.classList.remove("hide-button-effect");
+          } else {
+            securityAlertButton.classList.add("hide-button-effect");
+            securityAlertButton.classList.remove("pulse")
+          }
         }, 3000);
       }
     }
-    securityModalHttp.send({'value': securityButton.checked});
+    securityModalHttp.send({ 'value': securityButton.checked });
+  }
+
+  function changeAlertStatus(state) {
+    securityAlertHttp.open('PUT', url);
+    securityAlertHttp.onreadystatechange = function () {
+      if (securityAlertHttp.readyState == 4 && securityAlertHttp.status == 200) {
+        if (securityAlertButton.classList.contains("pulse")) {
+          securityAlertButton.classList.remove("pulse");
+        } else {
+          securityAlertButton.classList.add("pulse");
+        }
+      }
+    }
+    securityAlertHttp.send({'value': state})
   }
 
 }
