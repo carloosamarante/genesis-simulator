@@ -24,6 +24,7 @@ if (window.location.pathname.match('modules.html') != null) {
         velocityButton.classList.add("disabled");
       }
       if (velocityHttp.readyState == 4 && velocityHttp.status == 200) {
+        console.log(velocityHttp.response);
         setTimeout(function () {
           document.getElementById("velocity").innerHTML = speed;
           calcSpeedMarker(speed);

@@ -29,7 +29,7 @@ window.onload = function typeWriter() {
           setTimeout(function () {
             var newUrl = window.location.href.replace('login.html', 'modules.html')
             window.location.replace(newUrl)
-          }, 3000);
+          }, 4500);
         }
       }
       connectHttp.setRequestHeader("Content-type", "application/json");
