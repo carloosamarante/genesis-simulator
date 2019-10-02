@@ -15,11 +15,6 @@ if (window.location.pathname.match('modules.html') != null) {
   recognition.lang = 'pt-BR';
   recognition.interimResults = false;
 
-  speechModule.onclick = function () {
-    speechModal.classList.add("button-effect");
-    speechModal.classList.remove("hide-button-effect");
-  }
-
   speechButton.onclick = function () {
     recognition.start();
     speechButton.classList.add("hide-button-effect");
