@@ -3,11 +3,13 @@ if (window.location.pathname.match('modules.html') != null) {
     recommendationModal = document.getElementById("recommendation-modal"),
     restaurantButton = document.getElementById("restaurant-button"),
     hotelButton = document.getElementById("hotel-button"),
-    entertainmentButton = document.getElementById("entertainment-button"),
+    gasButton = document.getElementById("gas-button"),
     restaurantHttp = new XMLHttpRequest(),
     hotelHttp = new XMLHttpRequest(),
-    entertainmentHttp = new XMLHttpRequest(),
-    url = 'http://localhost:5051/healthcheck';
+    gasHttp = new XMLHttpRequest(),
+    url_gas = 'http://localhost:5051/recommendation/GAS';
+    url_hotel = 'http://localhost:5051/recommendation/HOTEL';
+    url_restaurant = 'http://localhost:5051/recommendation/RESTAURANT';
 
   recommendationModule.onclick = function showTime() {
     recommendationModal.classList.remove("hide-button-effect");
@@ -22,13 +24,13 @@ if (window.location.pathname.match('modules.html') != null) {
     recommendation('hotel');
   };
 
-  entertainmentButton.onclick = function () {
-    recommendation('entertainment');
+  gasButton.onclick = function () {
+    recommendation('gas');
   };
 
   function recommendation(type) {
     if (type == 'restaurant') {
-      restaurantHttp.open('POST', url);
+      restaurantHttp.open('GET', url_restaurant);
       restaurantHttp.onreadystatechange = function () {
         if (restaurantHttp.readyState != 4) {
           restaurantButton.innerHTML = "Recebendo...";
@@ -41,9 +43,10 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      restaurantHttp.send(type);
+      restaurantHttp.setRequestHeader("Content-type", "application/json");
+      restaurantHttp.send();
     } else if (type == 'hotel') {
-      hotelHttp.open('POST', url);
+      hotelHttp.open('GET', url_hotel);
       hotelHttp.onreadystatechange = function () {
         if (hotelHttp.readyState != 4) {
           hotelButton.innerHTML = "Recebendo...";
@@ -56,22 +59,24 @@ if (window.location.pathname.match('modules.html') != null) {
           }, 3000);
         }
       }
-      hotelHttp.send(type);
+      hotelHttp.setRequestHeader("Content-type", "application/json");
+      hotelHttp.send();
     } else {
-      entertainmentHttp.open('POST', url);
-      entertainmentHttp.onreadystatechange = function () {
-        if (entertainmentHttp.readyState != 4) {
-          entertainmentButton.innerHTML = "Recebendo...";
-          entertainmentButton.classList.add("disabled");
+      gasHttp.open('GET', url_gas);
+      gasHttp.onreadystatechange = function () {
+        if (gasHttp.readyState != 4) {
+          gasButton.innerHTML = "Recebendo...";
+          gasButton.classList.add("disabled");
         }
-        if (entertainmentHttp.readyState == 4 && entertainmentHttp.status == 200) {
+        if (gasHttp.readyState == 4 && gasHttp.status == 200) {
           setTimeout(function () {
-            entertainmentButton.innerHTML = "Receber";
-            entertainmentButton.classList.remove("disabled");
+            gasButton.innerHTML = "Receber";
+            gasButton.classList.remove("disabled");
           }, 3000);
         }
       }
-      entertainmentHttp.send(type);
+      gasHttp.setRequestHeader("Content-type", "application/json");
+      gasHttp.send();
     }
   }
 }
