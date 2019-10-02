@@ -36,6 +36,10 @@ if (window.location.pathname.match('modules.html') != null) {
             document.getElementById("hour-clock").innerHTML = timec;
             timeClockButton.innerHTML = "Alterar";
             timeClockButton.classList.remove("disabled");
+
+            if (TimeClockHttp.response == '{"sleepMode":true}') {
+              console.log(TimeClockHttp.response);
+            }
           }, 3000);
         }
       }
@@ -57,6 +61,10 @@ if (window.location.pathname.match('modules.html') != null) {
             document.getElementById("hour-period").innerHTML = timep;
             timePeriodButton.innerHTML = "Alterar";
             timePeriodButton.classList.remove("disabled");
+
+            if (TimePeriodHttp.response == '{"sleepMode":true}') {
+              console.log(TimePeriodHttp.response);
+            }
           }, 3000);
         }
       }
