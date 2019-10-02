@@ -44,6 +44,14 @@ if (window.location.pathname.match('modules.html') != null) {
         setTimeout(function () {
           spinnerSpeech.classList.add("hide-button-effect");
           speechButton.classList.remove("hide-button-effect");
+
+          if (speechModalHttp.response == '{"sleepMode":true}') {
+            document.getElementById("myonoffswitch").checked = true;
+          }
+
+          if (speechModalHttp.response == '{"securityMode":true}') {
+            document.getElementById("securityonoffswitch").checked = true;
+          }
         }, 2000);
       }
     }
