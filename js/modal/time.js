@@ -38,7 +38,7 @@ if (window.location.pathname.match('modules.html') != null) {
             timeClockButton.classList.remove("disabled");
 
             if (TimeClockHttp.response == '{"sleepMode":true}') {
-              console.log(TimeClockHttp.response);
+              document.getElementById("myonoffswitch").checked = true;
             }
           }, 3000);
         }
@@ -63,7 +63,7 @@ if (window.location.pathname.match('modules.html') != null) {
             timePeriodButton.classList.remove("disabled");
 
             if (TimePeriodHttp.response == '{"sleepMode":true}') {
-              console.log(TimePeriodHttp.response);
+              document.getElementById("myonoffswitch").checked = true;
             }
           }, 3000);
         }
