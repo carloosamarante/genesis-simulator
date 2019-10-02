@@ -8,6 +8,7 @@ if (window.location.pathname.match('modules.html') != null) {
     securityModalHttp = new XMLHttpRequest(),
     securityAlertHttp = new XMLHttpRequest(),
     url = 'http://localhost:5051/security';
+    url_alert = 'http://localhost:5051/security/danger';
 
   securityModule.onclick = function () {
     securityModal.classList.remove("hide-button-effect");
@@ -53,7 +54,7 @@ if (window.location.pathname.match('modules.html') != null) {
   }
 
   function changeAlertStatus(state) {
-    securityAlertHttp.open('PUT', url);
+    securityAlertHttp.open('PUT', url_alert);
     securityAlertHttp.onreadystatechange = function () {
       if (securityAlertHttp.readyState == 4 && securityAlertHttp.status == 200) {
         if (securityAlertButton.classList.contains("pulse")) {
