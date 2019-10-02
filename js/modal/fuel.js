@@ -3,7 +3,7 @@ if (window.location.pathname.match('modules.html') != null) {
     fuelModal = document.getElementById("fuel-modal"),
     fuelButton = document.getElementById("fuel-button"),
     fuelHttp = new XMLHttpRequest(),
-    urlFuel = 'http://localhost:5051/connect';
+    urlFuel = 'http://localhost:5051/fuel';
 
   fuelModule.onclick = function showTime() {
     fuelModal.classList.remove("hide-button-effect");
