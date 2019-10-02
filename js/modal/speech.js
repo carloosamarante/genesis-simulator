@@ -47,10 +47,14 @@ if (window.location.pathname.match('modules.html') != null) {
 
           if (speechModalHttp.response == '{"sleepMode":true}') {
             document.getElementById("myonoffswitch").checked = true;
+          } else {
+            document.getElementById("myonoffswitch").checked = false;
           }
 
           if (speechModalHttp.response == '{"securityMode":true}') {
             document.getElementById("securityonoffswitch").checked = true;
+          } else {
+            document.getElementById("securityonoffswitch").checked = false;
           }
         }, 2000);
       }
