@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       velocityModal = document.getElementById("velocity-modal"),
       sleepModal = document.getElementById("sleep-modal"),
       timeModal = document.getElementById("time-modal"),
-      speechModal = document.getElementById("speech-modal"),
+      fuelModal = document.getElementById("fuel-modal"),
       securityModal = document.getElementById("security-modal"),
       recommendationModal = document.getElementById("recommendation-modal"),
       newModal = document.getElementById("new-modal");
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         sleepModal.classList.remove("button-effect");
         sleepModal.classList.add("hide-button-effect");
       }
-      if (event.target == speechModal) {
-        speechModal.classList.remove("button-effect");
-        speechModal.classList.add("hide-button-effect");
+      if (event.target == fuelModal) {
+        fuelModal.classList.remove("button-effect");
+        fuelModal.classList.add("hide-button-effect");
       }
       if (event.target == securityModal) {
         securityModal.classList.remove("button-effect");

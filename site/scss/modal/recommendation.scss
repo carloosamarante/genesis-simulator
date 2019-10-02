@@ -18,6 +18,7 @@
     }
 
     .disabled {
-        background: $gray;
+        background-color: $gray;
+        color: $dark-gray;
     }
 }

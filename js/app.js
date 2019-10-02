@@ -7,3 +7,4 @@ import './modal/speech';
 import './modal/security';
 import './modal/recommendation';
 import './modal/additional-modal';
+import './modal/fuel';

@@ -1,0 +1,30 @@
+#fuel-container {
+    text-align: center;
+    background: $white;
+    padding-top: 30px;
+    height: 250px;
+    padding-bottom: 60px;
+
+    #fuel-icon {
+        width: 60px;
+        margin-top: 20px;
+    }
+
+    .fuel-buttons {
+        background-color: $primary-color;
+        color: $white;
+        padding: 15px 0;
+        width: 30%;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 16px;
+        margin: 50px 2px 0;
+        cursor: pointer;
+    }
+
+    .disabled {
+        background-color: $gray;
+        color: $dark-gray;
+    }
+}
