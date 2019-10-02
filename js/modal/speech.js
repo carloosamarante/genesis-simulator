@@ -1,6 +1,5 @@
 if (window.location.pathname.match('modules.html') != null) {
   var speechModule = document.getElementById("speech-module"),
-    speechModal = document.getElementById("speech-modal"),
     speechModalHttp = new XMLHttpRequest(),
     speechButton = document.getElementById("microphone-button"),
     spinnerSpeech = document.getElementById("spinner-speech"),
