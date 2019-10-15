@@ -1,3 +1,9 @@
+#recommendation-modal {
+    .modal-content {
+        margin-top: 10% !important;
+    }
+}
+
 .modal {
     font-family: $standard-font-normal;
     z-index: 3;
@@ -15,7 +21,7 @@
         padding: 0;
         outline: 0;
         width: 60%;
-        margin-top: 160px;
+        margin-top: 18%;
     }
     .modal-container {
         width: 100%;
@@ -31,6 +37,7 @@
         background-color: $white;
         float: left;
         text-align: center;
+        margin-top: 15%;
     }
     .onoffswitch {
         position: relative; width: 131px;
