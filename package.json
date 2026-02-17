@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^7.0.0",
-    "webpack": "^4.39.3",
+    "node-sass": "^9.0.0",
+    "webpack": "^5.105.2",
     "webpack-cli": "^3.3.8"
   }
 }
